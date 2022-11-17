@@ -77,7 +77,8 @@ select * from class;
 select * from student;            
 
 --  Hiện thị danh sách các lớp có học viên theo học và số lượng học viên của mỗi lớp               
-select c.class_name,count(s.class_id) as 'so luong' from class c join student s on s.class_id = c.id group by c.class_name;
+select c.class_name,count(s.class_id) as 'so luong' from class c join student s on s.class_id = c.id
+ group by c.class_name;
 
 --    Tính điểm lớn nhất của mỗi các lớp
 select c.class_name ,max(point) as 'diem cao nhat' from class c join student s 
@@ -92,7 +93,7 @@ select name , birthday from instructor union
 select name , birthday from student;          
 
 --    Lấy ra top 3 học viên có điểm cao nhất của trung tâm.
-select * from student s having max(s.point);
+select name,point from student where point >= 8 limit 3;
 
 
 --   Lấy ra các học viên có điểm số là cao nhất của trung tâm.
