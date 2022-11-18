@@ -1,5 +1,6 @@
 create database demo;
 use demo;
+
 create table products(
   Id int auto_increment primary key, 
   product_Code int, 
@@ -9,11 +10,15 @@ create table products(
   product_Description varchar(45), 
   product_Status bit
 );
+
+
 insert into products (
   product_code, product_name, product_price, 
   product_amount, product_description, 
   product_status
 ) 
+
+
 values 
   (
     12, 'Xe may', 5000, 200, 'Xe HonDa', 
@@ -27,16 +32,21 @@ values
     7, 'Xe Dap', 1000, 100, 'Xe Dap Moi', 
     0
   );
+  
+  
 -- Tạo Unique Index trên bảng Products (sử dụng cột productCode để tạo chỉ mục)
 alter table 
   products 
 add 
   unique index unique_Index(product_code);
+  
 -- Tạo Composite Index trên bảng Products (sử dụng 2 cột productName và productPrice)
 alter table 
   products 
 add 
   index(product_name, product_price);
+  
+  
 -- Sử dụng câu lệnh EXPLAIN để biết được câu lệnh SQL của bạn thực thi như nào
 explain 
 select 
@@ -53,6 +63,7 @@ from
   products 
 where 
   product_code = 22;
+  
 -- Tạo view lấy về các thông tin: productCode, productName, productPrice, productStatus từ bảng products.
 create 
 or replace view product_view as 
@@ -63,6 +74,7 @@ select
   product_status 
 from 
   products;
+  
 -- Tiến hành sửa đổi view
 update 
   product_view 
@@ -76,9 +88,12 @@ set
   product_name = 'Xe Bò' 
 where 
   product_code = 12;
+  
+  
 -- Tiến hành xoá view
 drop 
   view product_view;
+  
 -- Tạo store procedure lấy tất cả thông tin của tất cả các sản phẩm trong bảng product
 delimiter // create procedure show_all_product() begin 
 select 
@@ -86,6 +101,7 @@ select
 from 
   products;
 end // delimiter // call show_all_product;
+
 -- Tạo store procedure thêm một sản phẩm mới
 delimiter // create procedure add_product(
   new_code int, 
@@ -108,6 +124,7 @@ end // delimiter // call add_product(
   4, 'Xe Lampo', 4400, 600, 'Sieu Xe', 
   1
 );
+
 -- Tạo store procedure sửa thông tin sản phẩm theo id
 delimiter // create procedure edit_product(
   p_id int, 
@@ -133,6 +150,7 @@ end // delimiter // call edit_product(
   3, 37, 'Xe Tay Ga', 2000, 200, 'Xe AB', 
   1
 );
+
 -- Tạo store procedure xoá sản phẩm theo id
 delimiter // create procedure delete_product(p_id int) begin 
 delete from 
