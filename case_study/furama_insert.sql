@@ -221,11 +221,13 @@ values
     6, 'Buffet buổi tối', '16000', 
     'suất', 'đầy đủ đồ ăn, tráng miệng'
   );
+  
 insert into hop_dong (
   ma_hop_dong, ngay_lam_hop_dong, ngay_ket_thuc, 
   tien_dat_coc, ma_nhan_vien, ma_khach_hang, 
   ma_dich_vu
 ) 
+
 values 
   (
     1, '2020-12-08', '2020-12-08', 0, 3, 
