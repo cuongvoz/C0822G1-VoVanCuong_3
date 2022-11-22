@@ -155,3 +155,68 @@ having sum(hd.so_luong) > 10);
 -- thông tin hiển thị bao gồm id (ma_nhan_vien, ma_khach_hang), ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi.
 select ma_nhan_vien as 'id' ,ho_ten,email,so_dien_thoai,ngay_sinh,dia_chi from nhan_vien union all
 select ma_khach_hang as 'id',ho_ten,email,so_dien_thoai,ngay_sinh,dia_chi from khach_hang;
+
+-- 21.	Tạo khung nhìn có tên là v_nhan_vien để lấy được thông tin của tất cả các nhân viên có địa chỉ là “Hải Châu” và
+-- đã từng lập hợp đồng cho một hoặc nhiều khách hàng bất kì với ngày lập hợp đồng là “12/12/2019”.
+create view v_nhan_vien as
+select n.* from nhan_vien n join hop_dong h on n.ma_nhan_vien = h.ma_nhan_vien
+where h.ngay_lam_hop_dong like '2019-12-12%' and n.dia_chi like '%Hải Châu';
+
+-- 22.	Thông qua khung nhìn v_nhan_vien thực hiện cập nhật địa chỉ thành “Liên Chiểu” đối với
+-- tất cả các nhân viên được nhìn thấy bởi khung nhìn này.
+select * from nhan_vien;
+update v_nhan_vien set dia_chi = '22 Yên Bái, Liên Chiểu'
+
+-- 	23.	Tạo Stored Procedure sp_xoa_khach_hang dùng để xóa thông tin của một khách hàng nào đó với ma_khach_hang 
+-- được truyền vào như là 1 tham số của sp_xoa_khach_hang.
+delimiter //
+create procedure sp_xoa_khach_hang(p_ma_khach int)
+begin
+delete from khach_hang where ma_khach_hang = p_ma_khach;
+end //
+delimiter //
+select * from khach_hang;
+call sp_xoa_khach_hang(8);
+
+-- 24.	Tạo Stored Procedure sp_them_moi_hop_dong dùng để thêm mới vào bảng hop_dong với yêu cầu
+-- sp_them_moi_hop_dong phải thực hiện kiểm tra tính hợp lệ của dữ liệu bổ sung, với nguyên tắc không
+-- được trùng khóa chính và đảm bảo toàn vẹn tham chiếu đến các bảng liên quan.
+
+delimiter //
+create procedure sp_them_moi_hop_dong(p_id int,p_ngay_lam_hop_dong date,p_ngay_ket_thuc date ,p_tien_dat_coc double,p_ma_nhan_vien int,p_ma_khach_hang int,p_ma_dich_vu int)
+begin
+if p_id not in (select ma_hop_dong from hop_dong) then
+insert into hop_dong (ma_hop_dong,
+   ngay_lam_hop_dong, ngay_ket_thuc, 
+  tien_dat_coc, ma_nhan_vien, ma_khach_hang, 
+  ma_dich_vu
+) values (p_id,p_ngay_lam_hop_dong,p_ngay_ket_thuc,p_tien_dat_coc,p_ma_nhan_vien,p_ma_khach_hang,p_ma_dich_vu) and
+p_ma_khach_hang in (select ma_khach_hang from khach_hang);
+end if;
+end //
+delimiter //
+select * from hop_dong;
+call sp_them_moi_hop_dong('16','2020-10-05','2020-12-31',50000,6,2,3);
+
+-- 25.	Tạo Trigger có tên tr_xoa_hop_dong khi xóa bản ghi trong bảng hop_dong thì hiển thị tổng số lượng bản 
+-- ghi còn lại có trong bảng hop_dong ra giao diện console của database.
+-- Lưu ý: Đối với MySQL thì sử dụng SIGNAL hoặc ghi log thay cho việc ghi ở console.
+create table `history` (
+id int auto_increment primary key,
+so_luong int,
+update_day date
+)
+delimiter // 
+create trigger tr_xoa_hop_dong
+after delete on hop_dong
+for each row 
+begin
+insert into `history` (so_luong,update_day) values ((select count(*) from hop_dong),now());
+end //
+delimiter //
+set foreign_key_checks = 0;
+delete from hop_dong where ma_hop_dong = 10;
+select count(*) from hop_dong;
+select * from hop_dong  ;
+select * from history;
+
