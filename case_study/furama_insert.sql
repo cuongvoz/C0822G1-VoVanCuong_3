@@ -76,6 +76,18 @@ VALUES
     '755434343', '8000000', '0988767111', 
     'nguyencongdao12@gmail.com', '6 Hoà Khánh, Đồng Nai', 
     '2', '3', '2'
+  ),
+   (
+    '11', 'Nguyễn Văn A', '1980-11-07', 
+    '456231786', '10000000', '0901234121', 
+    'vana@gmail.com', '295 Nguyễn Tất Thành, Hải Châu', 
+    '1', '3', '1'
+  ), 
+  (
+    '12', 'Lê Văn B', '1989-04-09', 
+    '654231234', '7000000', '0934212314', 
+    'levanb@gmail.com', '22 Yên Bái, Hải Châu', 
+    '1', '2', '2'
   );
 INSERT INTO `loai_khach` (
   `ma_loai_khach`, `ten_loai_khach`
@@ -276,6 +288,14 @@ values
   (
     12, '2021-05-25', '2021-05-27', 0, 
     7, 10, 1
+  ),
+  (
+    13, '2019-12-12', '2020-02-08', 5000, 11, 
+    4, 3
+  ),
+    (
+    14, '2019-12-12', '2020-01-08', 12000, 12, 
+    10, 4
   );
 insert into hop_dong_chi_tiet (
   ma_hop_dong_chi_tiet, so_luong, ma_hop_dong, 
