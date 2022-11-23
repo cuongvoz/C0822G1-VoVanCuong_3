@@ -1,0 +1,63 @@
+
+p {
+    font-family: sans-serif;
+    font-size: 16px;
+    border: 1px;
+    text-indent: 30px;
+}
+#text1 {
+ font-weight: unset;
+
+}
+hr {
+    position: relative;
+    margin-left: 0.1px;
+    width: 600px;
+    line-height: 0.1px
+}
+.sup{
+    font-size: 10px;
+    color: darkblue;
+}
+#inline {
+    position: relative;
+    top: -16px;
+
+    line-height: 10px;
+    display: inline;
+}
+#text2 {
+    position: relative;
+    bottom: 15px;
+    left: 7px;
+    font-size: 17px;
+    font-family: sans-serif;
+}
+div {
+   
+    padding: 10px;
+    border: 1px solid black;
+    position: relative;
+    width: 600px;
+    height: 600px;
+    text-align: justify;
+    top: -6px;
+}
+h1 {
+    font-family: Arrus-Black, serif;
+    font-weight: inherit;
+    font-size: 37px;
+    line-height: 0.3px;
+}
+
+span {
+
+    color: darkblue;
+}
+.cyan {
+    color: blue;
+}
+div {
+    
+    border: 1px ;
+}
