@@ -5,9 +5,26 @@ p {
     border: 1px;
     text-indent: 30px;
 }
+a:hover {
+    color: crimson;
+}
+#sup1 {
+   font-size: 10px;
+}
 #text1 {
  font-weight: unset;
+    text-align: left;
+    text-indent: 0;
+    line-height: 0.1px;
+    font-size: 14px
 
+}
+#text3 {
+    margin-top: -1px
+}
+a {
+    color: darkblue;
+    text-decoration: none;
 }
 hr {
     position: relative;
@@ -20,6 +37,7 @@ hr {
     color: darkblue;
 }
 #inline {
+    word-spacing: 7px;
     position: relative;
     top: -16px;
 
