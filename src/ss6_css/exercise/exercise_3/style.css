@@ -2,10 +2,44 @@
     height: 500px;
     width: 500px;
 }
+body{
+
+}
 h5 {
+    position: fixed;
     border: 1px solid black;
     font-size: 40px;
     text-align: center;
     width: 200px;
+    border-radius: 10px;
 
+}
+.h1 {
+
+    top: 40px;
+    right: 300px;
+}
+.h2 {
+    top: 140px;
+    right: 300px;
+}
+.h3{
+    top: 240px;
+    right: 300px;
+}
+.h4 {
+    top: 340px;
+    right: 300px;
+}
+p {
+
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 30px;
+    text-align: justify;
+    width: 600px;
+}
+.dongvat {
+    width: 400px ;
+    height: 400px;
 }

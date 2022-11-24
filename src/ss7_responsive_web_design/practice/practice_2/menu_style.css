@@ -1,0 +1,35 @@
+body{
+    font-family: Arial;
+
+}
+#menu ,#menu ul,#menu li {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+#menu li {
+    list-style: none;
+    position: relative;
+    width:100px;
+    height: 30px;
+    padding:0 20px;
+    background-color: black;
+    line-height: 30px;
+    cursor:pointer;
+}
+#menu li a {
+    text-decoration: none;
+    color: white;
+}
+#menu li a:hover {
+    background-color: brown;
+}
+#menu ul ul {
+  position: absolute;
+   left: 140px;
+    top:0;
+    visibility: hidden;
+}
+#menu ul li:hover ul{
+    visibility:visible;
+}
