@@ -23,7 +23,15 @@ img {
     /*Các thẻ div (col)  không đủ chỗ chứa trên 1 hàng thì rớt xuống*/
     flex-wrap: wrap;
 }
+a:hover {
+    background-size: 30px;
 
+    color: red;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
 .right {
 
 }
@@ -31,7 +39,8 @@ img {
     background-color: beige;
 }
 .head2 {
-    background-color: coral;
+    padding: 10px;
+    background-color: white;
     text-align: center;
 }
 #col1{
@@ -46,13 +55,14 @@ img {
 
 }
 .footer {
+    width: 100%;
+    padding: 10px;
    background: coral;
     text-align: center;
 
 }
 .head {
-    background-color: darkgrey;
-  }
+    background-color: white;  }
 body {
   margin: 0;
     font-family: sans-serif;
