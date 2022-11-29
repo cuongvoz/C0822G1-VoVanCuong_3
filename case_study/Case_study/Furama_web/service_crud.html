@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../src/bootstrap/css/bootstrap.css">
+    <script src="../../../src/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<div class="row">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <img src="https://furamavietnam.com/wp-content/uploads/2018/08/logo.png">
+        </li>
+        <li class="nav-item">
+            <div class="card" style="width: 8rem;height: 6rem">
+                <img src="https://truevaluevietnam.com/wp-content/uploads/2015/10/TA_brand_logo.png" height="55"
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <p style="display: inline">
+                103 - 105 Vo Nguyen Giap Street, Khue <br>
+                My Ward, Ngu Hanh Son District, Danang <br>
+                City, Vietnam <br>
+                7,0 km from Danang Airport
+            </p>
+        </li>
+        <li class="nav-item" style="margin-top: 30px">
+            <p>84-236-3847 333/888 <br>
+                reservation@furamavietnam.com</p>
+        </li>
+    </ul>
+</div>
+<div class="row">
+    <nav class="navbar navbar-light" style="background-color: teal">
+        <div class="container-fluid">
+            <a class="navbar-brand"
+               href="http://localhost:63342/module_3/case_study/Case_study/furama_web/furama_web.html?_ijt=m6b5ul3uno31tpfcv8t97msmvu">Home</a>
+            <a class="navbar-brand" href="#">Employee</a>
+            <a class="navbar-brand" href="#">Customer</a>
+            <a class="navbar-brand" href="#" href="#">Service</a>
+            <a class="navbar-brand" href="#">Contract</a>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</div>
+<h1>Service</h1>
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModaladd">
+    Add New Service &nbsp;&nbsp; <i class="fa-sharp fa-solid fa-poo"></i>
+</button>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Area</th>
+        <th scope="col">Cost</th>
+        <th scope="col">Max_People</th>
+        <th scope="col">Ren_type_id</th>
+        <th scope="col">Facility_type_id</th>
+        <th scope="col">Standard_room</th>
+        <th scope="col">Description_Other_Convenience</th>
+        <th scope="col">Pool_area</th>
+        <th scope="col">Number_of_floor</th>
+        <th scope="col">Facility_free</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td>Villa Beach Front</td>
+        <td>25000</td>
+        <td>1000000</td>
+        <td>10</td>
+        <td>vip</td>
+        <td>Có hồ bơi</td>
+        <td>500</td>
+        <td>4</td>
+        <td>null</td>
+        <td>3</td>
+        <td>1</td>
+        <td><button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModaledit"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button> </td>
+        <td><button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#deletemodal"><i class="fa-sharp fa-solid fa-trash"></i></button> </td>
+
+    </tr>
+    <tr>
+        <th scope="row">2</th>
+        <td>House Princess 01</td>
+        <td>14000</td>
+        <td>5000000</td>
+        <td>7</td>
+        <td>vip</td>
+        <td>Có thêm bếp nướng</td>
+        <td>null</td>
+        <td>3</td>
+        <td>null</td>
+        <td>2</td>
+        <td>2</td>
+        <td><button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModaledit"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button> </td>
+        <td><button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#deletemodal"><i class="fa-sharp fa-solid fa-trash"></i></button> </td>
+    </tr>
+    <tr>
+        <th scope="row">3</th>
+        <td>Room Twin 01</td>
+        <td>5000</td>
+        <td>1000000</td>
+        <td>2</td>
+        <td>normal</td>
+        <td>Có tivi</td>
+        <td>null</td>
+        <td>null</td>
+        <td>1 Xe máy, 1 Xe đạp</td>
+        <td>4</td>
+        <td>3</td>
+        <td><button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModaledit"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button></td>
+        <td><button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#deletemodal"><i class="fa-sharp fa-solid fa-trash"></i></button> </td>
+    </tr>
+    </tbody>
+</table>
+<!-- Modal -->
+<div class="modal fade" id="exampleModaladd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nhập thông tin mới</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3 row">
+                    <label for="id" class="col-sm-2 col-form-label">ID</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="id">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="name" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="area" class="col-sm-2 col-form-label">Area</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="area">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="cost" class="col-sm-2 col-form-label">Cost</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="cost">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="max_people" class="col-sm-2 col-form-label">Max People</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="max_people">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="rent_type_id" class="col-sm-2 col-form-label">Rent type id</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="rent_type_id">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="facility_type_id" class="col-sm-2 col-form-label">Facility type id</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="facility_type_id">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="standard_room" class="col-sm-2 col-form-label">Standard room</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="standard_room">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="description_other_convenience" class="col-sm-2 col-form-label">Description Other Convenience</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="description_other_convenience">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="pool_area" class="col-sm-2 col-form-label">Pool area</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="pool_area">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="number_of_floor" class="col-sm-2 col-form-label">number_of_floor</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="number_of_floor">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="facility_free" class="col-sm-2 col-form-label">Facility free</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="facility_free">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-primary">Đồng ý thêm</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModaledit" tabindex="-1" aria-labelledby="exampleModalLabeledit" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabeledit">Sửa thông tin dịch vụ</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3 row">
+                    <label for="id2" class="col-sm-2 col-form-label">ID</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="id2">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="name2" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name2">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="area2" class="col-sm-2 col-form-label">Area</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="area2">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="cost2" class="col-sm-2 col-form-label">Cost</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="cost2">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="max_people2" class="col-sm-2 col-form-label">Max People</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="max_people2">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="rent_type_id2" class="col-sm-2 col-form-label">Rent type id</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="rent_type_id2">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="facility_type_id2" class="col-sm-2 col-form-label">Facility type id</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="facility_type_id2">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="standard_room2" class="col-sm-2 col-form-label">Standard room</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="standard_room2">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="description_other_convenience2" class="col-sm-2 col-form-label">Description Other Convenience</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="description_other_convenience2">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="pool_area2" class="col-sm-2 col-form-label">Pool area</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="pool_area2">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="number_of_floor2" class="col-sm-2 col-form-label">number_of_floor</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="number_of_floor2">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="facility_free2" class="col-sm-2 col-form-label">Facility free</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="facility_free2">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-primary">Cập nhật</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" tabindex="-1" id="deletemodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Xóa dịch vụ</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Bạn chắc chắn muốn xóa không ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-primary">Xóa</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="background: cadetblue;margin-top: 80px" class="row">
+    <div class="col-1" style="background: cadetblue"></div>
+    <div class="col-3" style="background: #bcbebf">
+        <h1 style="color: darkkhaki;text-align: center;margin-top: 30px">How to Get to Us</h1>
+        <p style="text-align: center;text-align: left">Furama is a premier base for exploring one of<br> Asia's most
+            exciting new destinations. Just a<br> short drive
+            from Danang lay four UNESCO-listed<br> World Heritage Sites:</p>
+        <h1><a href="#" class="btn" style="color: white;background: teal"><i class="fa-sharp fa-solid fa-location-dot"> &ensp;View On Map</i></a>
+        </h1>
+        <h2 style="color: darkkhaki">Local Places</h2>
+        <br>
+        <p><b>1. The former imperial city of HUE &ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;&nbsp;2 hours</b></p>
+        <hr>
+        <p><b>2. The ancient Hoi An &ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;&nbsp;30
+            minutes</b></p>
+        <hr>
+        <p><b>3. Champa civilization, My Son &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;90 minutes</b></p>
+        <hr>
+        <p><b>4. Phong Nha Caves &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+            3 hours</b></p>
+    </div>
+    <div class="col-3" style="margin-top: 30px;text-align: center">
+        <a style="color: #5c636a;text-decoration: none" href="">News</a>
+        <br>
+        <br>
+        <a style="color: #5c636a;text-decoration: none" href="">Rack rate</a>
+        <br>
+        <br>
+        <a style="color: #5c636a;text-decoration: none" href="">Lifestyle Bog</a>
+        <br>
+        <br>
+        <a style="color: #5c636a;text-decoration: none" href="">Work with us</a>
+        <br>
+        <br>
+        <a style="color: #5c636a;text-decoration: none" href="">Contact us</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div style="margin-left: 130px"><img
+                src="https://furamavietnam.com/wp-content/uploads/2019/02/Ariyana-Tourism-Complex-02-2.png"
+                width="760" height="90"></div>
+    </div>
+    <div class="col-4" style="margin-top: 40px">
+        <h5 style="color: darkkhaki;">Contact US</h5>
+        <br>
+        <p style="font-size: 17px">
+            <i class="fa-sharp fa-solid fa-location-dot"></i>
+            103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son<br> District, Danang City, Vietnam<br>
+            Tel.: 84-236-3847 333/888 * Fax: 84-236-3847 666<br>
+            Email: reservation@furamavietnam.com *<a href="https://furamavietnam.com/undefined/" style="color: black;text-decoration: none">www.furamavietnam.com</a> <br> GDS Codes: Amadeus-GD DADFUR,
+            Galileo/Apollo-GD 16236<br>, Sabre-GD 032771, Worldspan- GD DADFU
+        </p>
+        <hr>
+        <a href="https://www.facebook.com/furamaresort/"><img
+                src="https://furamavietnam.com/wp-content/uploads/2019/06/incon-Facbook-1.png"></a>
+        <a href="https://www.instagram.com/furama_resort_and_villas/?hl=vi"><img src="https://furamavietnam.com/wp-content/uploads/2019/06/social-ins.png"></a>
+        <a href="https://www.youtube.com/user/furamaresortvietnam/featured"><img src="https://furamavietnam.com/wp-content/uploads/2021/10/social-youtube.png"></a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p style="margin-left: 300px">© 2018 Furama Resort Danang </p>
+    </div>
+</div>
+</body>
+</html>
