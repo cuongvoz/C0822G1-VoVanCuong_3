@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../src/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../../../src/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="row">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <img src="https://furamavietnam.com/wp-content/uploads/2018/08/logo.png">
+        </li>
+        <li class="nav-item">
+            <div class="card" style="width: 8rem;height: 6rem">
+                <img src="https://truevaluevietnam.com/wp-content/uploads/2015/10/TA_brand_logo.png" height="55"
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <p style="display: inline">
+                103 - 105 Vo Nguyen Giap Street, Khue <br>
+                My Ward, Ngu Hanh Son District, Danang <br>
+                City, Vietnam <br>
+                7,0 km from Danang Airport
+            </p>
+        </li>
+        <li class="nav-item" style="margin-top: 30px">
+            <p>84-236-3847 333/888 <br>
+                reservation@furamavietnam.com</p>
+        </li>
+    </ul>
+</div>
+<div class="row">
+    <nav class="navbar navbar-light" style="background-color: teal">
+        <div class="container-fluid">
+            <a class="navbar-brand"
+               href="http://localhost:63342/module_3/case_study/Case_study/furama_web/furama_web.html?_ijt=m6b5ul3uno31tpfcv8t97msmvu">Home</a>
+
+            <button class="btn btn-light" style="margin-right: 700px" data-bs-toggle="modal" data-bs-target="#addmodal">Add New Employee</button>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">DateOfBirth</th>
+        <th scope="col">ID Card</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">Position</th>
+        <th scope="col">Education</th>
+        <th scope="col">Division</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td>Nguyễn Văn An</td>
+        <td>1970-11-07</td>
+        <td>456231786</td>
+        <td>10000000</td>
+        <td>0901234121</td>
+        <td>annguyen@gmail.com</td>
+        <td>295 Nguyễn Tất Thành, Đà Nẵng</td>
+        <td>Quản Lí</td>
+        <td>Cao Đẳng</td>
+        <td>Sale-marketing</td>
+        <td><button data-bs-toggle="modal" data-bs-target="#addmodal">Edit</button></td>
+        <td><button>Delete</button></td>
+    </tr>
+    <tr>
+        <th scope="row">2</th>
+        <td>Lê Văn Bình</td>
+        <td>1997-04-09</td>
+        <td>654231234</td>
+        <td>7000000</td>
+        <td>0934212314</td>
+        <td>binhlv@gmail.com</td>
+        <td>22 Yên Bái, Đà Nẵng</td>
+        <td>Quản Lí</td>
+        <td>Đại Học</td>
+        <td>Hành Chính</td>
+        <td><button data-bs-toggle="modal" data-bs-target="#addmodal">Edit</button></td>
+        <td><button>Delete</button></td>
+    </tr>
+    <tr>
+        <th scope="row">3</th>
+        <td>Hồ Thị Yến</td>
+        <td>1995-12-12</td>
+        <td>999231723</td>
+        <td>14000000</td>
+        <td>0412352315</td>
+        <td>thiyen@gmail.com</td>
+        <td>K234/11 Điện Biên Phủ, Gia Lai</td>
+        <td>Quản Lí</td>
+        <td>Cao Đẳng</td>
+        <td>Hành Chính</td>
+        <td><button data-bs-toggle="modal" data-bs-target="#addmodal">Edit</button></td>
+        <td><button>Delete</button></td>
+    </tr>
+    <tr>
+        <th scope="row">4</th>
+        <td>Võ Công Toản</td>
+        <td>1980-04-04</td>
+        <td>123231365</td>
+        <td>17000000</td>
+        <td>0374443232</td>
+        <td>toan0404@gmail.com</td>
+        <td>77 Hoàng Diệu, Quảng Trị</td>
+        <td>Quản Lí</td>
+        <td>Sau Đại Học</td>
+        <td>Quản Lí</td>
+        <td><button data-bs-toggle="modal" data-bs-target="#addmodal">Edit</button></td>
+        <td><button>Delete</button></td>
+    </tr>
+    <tr>
+        <th scope="row">5</th>
+        <td>Nguyễn Bỉnh Phát</td>
+        <td>1999-12-09</td>
+        <td>454363232</td>
+        <td>6000000</td>
+        <td>0902341231</td>
+        <td>phatphat@gmail.com</td>
+        <td>43 Yên Bái, Đà Nẵng</td>
+        <td>Nhân Viên</td>
+        <td>Trung Cấp</td>
+        <td>Sale-marketing</td>
+        <td><button data-bs-toggle="modal" data-bs-target="#addmodal">Edit</button></td>
+        <td><button>Delete</button></td>
+    </tr>
+    </tbody>
+</table>
+<div class="modal" tabindex="-1" id="addmodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add new employee</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3 row">
+                    <label for="name" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="birthday" class="col-sm-2 col-form-label">Date Of Birth</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="birthday">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="idcard" class="col-sm-2 col-form-label">ID Card</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="idcard">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="salary" class="col-sm-2 col-form-label">Salary</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="salary">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="phonenumber" class="col-sm-2 col-form-label">Phone Number</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="phonenumber">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="email" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="email">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="address" class="col-sm-2 col-form-label">Address</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="address">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="position" class="col-sm-2 col-form-label">Position</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="position">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="education" class="col-sm-2 col-form-label">Education</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="education">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="division" class="col-sm-2 col-form-label">Division</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="division">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Agree</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" tabindex="-1" id="editmodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add new employee</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3 row">
+                    <label for="name1" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name1">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="birthday1" class="col-sm-2 col-form-label">Date Of Birth</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="birthday1">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="idcard1" class="col-sm-2 col-form-label">ID Card</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="idcard1">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="salary1" class="col-sm-2 col-form-label">Salary</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="salary1">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="phonenumber1" class="col-sm-2 col-form-label">Phone Number</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="phonenumber1">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="email1" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="email1">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="address1" class="col-sm-2 col-form-label">Address</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="address1">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="position1" class="col-sm-2 col-form-label">Position</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="position1">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="education1" class="col-sm-2 col-form-label">Education</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="education1">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="division1" class="col-sm-2 col-form-label">Division</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="division1">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Agree</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
