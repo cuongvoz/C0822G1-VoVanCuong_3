@@ -13,7 +13,7 @@ public class UserDAO implements IUserDAO {
 
     private static final String INSERT_USERS_SQL = "INSERT INTO users (name, email, country) VALUES (?, ?, ?);";
     private static final String SELECT_USER_BY_ID = "select id,name,email,country from users where id =?";
-    private static final String SELECT_ALL_USERS = "select * from users";
+    private static final String SELECT_ALL_USERS = "select * from users ";
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
     private static final String FIND_USER_SQL = "select id,name,email,country from users where country like ?;";
@@ -38,13 +38,14 @@ public class UserDAO implements IUserDAO {
     }
 
 
-    public User selectUserByCountry(String country) {
+    public List<User> selectUserByCountry(String country) {
+        List<User> list = new ArrayList<>();
         User user = null;
         // Step 1: Establishing a Connection
         try (Connection connection = getConnection();
              // Step 2:Create a statement using connection object
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_USER_SQL);) {
-            preparedStatement.setString(1, country);
+            preparedStatement.setString(1, "%" + country + "%");
             System.out.println(preparedStatement);
             // Step 3: Execute the query or update query
             ResultSet rs = preparedStatement.executeQuery();
@@ -56,11 +57,12 @@ public class UserDAO implements IUserDAO {
                 String email = rs.getString("email");
                 String countryz = rs.getString("country");
                 user = new User(id, name, email, countryz);
+                list.add(user);
             }
         } catch (SQLException e) {
             printSQLException(e);
         }
-        return user;
+        return list;
     }
 
     public void insertUser(User user) throws SQLException {

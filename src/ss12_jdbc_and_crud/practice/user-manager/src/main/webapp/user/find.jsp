@@ -19,12 +19,15 @@
          <th>Email</th>
          <th>Country</th>
      </tr>
-     <tr>
-        <th>${user.id}</th>
-        <th>${user.name}</th>
-        <th>${user.email}</th>
-        <th>${user.country}</th>
-     </tr>
+     <c:forEach var="user" items="${list}">
+         <tr>
+             <th>${user.id}</th>
+             <th>${user.name}</th>
+             <th>${user.email}</th>
+             <th>${user.country}</th>
+         </tr>
+     </c:forEach>
+
  </table>
 </body>
 </html>

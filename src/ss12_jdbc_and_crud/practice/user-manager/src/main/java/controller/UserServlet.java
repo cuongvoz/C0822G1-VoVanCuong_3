@@ -46,10 +46,10 @@ public class UserServlet extends HttpServlet {
     }
     private void findUser(HttpServletRequest request, HttpServletResponse response) {
         String country = request.getParameter("country");
-        User user = userDAO.selectUserByCountry(country);
-        request.setAttribute("user",user);
+        List<User> list = userDAO.selectUserByCountry(country);
+        request.setAttribute("listUser",list);
         try {
-            request.getRequestDispatcher("user/find.jsp").forward(request,response);
+            request.getRequestDispatcher("user/list.jsp").forward(request,response);
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
@@ -86,9 +86,9 @@ public class UserServlet extends HttpServlet {
 
     private void sortLists(HttpServletRequest request, HttpServletResponse response) {
         List<User> list = this.userDAO.sortList();
-        request.setAttribute("list",list);
+        request.setAttribute("listUser",list);
         try {
-            request.getRequestDispatcher("user/sort.jsp").forward(request,response);
+            request.getRequestDispatcher("user/list.jsp").forward(request,response);
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }

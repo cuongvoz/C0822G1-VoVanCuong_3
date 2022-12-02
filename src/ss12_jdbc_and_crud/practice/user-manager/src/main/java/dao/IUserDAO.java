@@ -12,7 +12,7 @@ public interface IUserDAO {
 
     public User selectUser(int id);
 
-    User selectUserByCountry(String country);
+    List<User> selectUserByCountry(String country);
 
     public List<User> selectAllUsers();
 

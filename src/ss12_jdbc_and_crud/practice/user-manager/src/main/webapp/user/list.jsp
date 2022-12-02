@@ -47,6 +47,7 @@
             </tr>
         </c:forEach>
     </table>
+    <a href="/users">Back to list</a>
 </div>
 </body>
 </html>
