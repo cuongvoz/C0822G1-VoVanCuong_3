@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../src/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="../../../src/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="row">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <img src="https://furamavietnam.com/wp-content/uploads/2018/08/logo.png">
+        </li>
+        <li class="nav-item">
+            <div class="card" style="width: 8rem;height: 6rem">
+                <img src="https://truevaluevietnam.com/wp-content/uploads/2015/10/TA_brand_logo.png" height="55"
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <p style="display: inline">
+                103 - 105 Vo Nguyen Giap Street, Khue <br>
+                My Ward, Ngu Hanh Son District, Danang <br>
+                City, Vietnam <br>
+                7,0 km from Danang Airport
+            </p>
+        </li>
+        <li class="nav-item" style="margin-top: 30px">
+            <p>84-236-3847 333/888 <br>
+                reservation@furamavietnam.com</p>
+        </li>
+    </ul>
+</div>
+<div class="row">
+    <nav class="navbar navbar-light" style="background-color: teal">
+        <div class="container-fluid">
+            <a class="navbar-brand"
+               href="http://localhost:63342/module_3/case_study/Case_study/furama_web/furama_web.html?_ijt=m6b5ul3uno31tpfcv8t97msmvu">Home</a>
+
+            <button class="btn btn-light" style="margin-right: 700px" data-bs-toggle="modal" data-bs-target="#addmodal">Add New Customer</button>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Dịch Vụ</th>
+        <th scope="col">Khách Hàng</th>
+        <th scope="col">Ngày Bắt Đầu</th>
+        <th scope="col">Ngày Kết Thúc</th>
+        <th scope="col">Tiền Đặt Cọc</th>
+        <th scope="col">Tổng Tiền</th>
+        <th scope="col">Các Dịch Vụ Đi Kèm</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td>Room Twin 01</td>
+        <td>Nguyễn Thị Hào</td>
+        <td>08/12/2020</td>
+        <td>08/12/2020</td>
+        <td>đ0</td>
+        <td>đ1,000,000</td>
+        <td>
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
+            <button>Danh Sách Dịch vụ đi kèm</button>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">2</th>
+        <td>Villa Beach Front</td>
+        <td>Trương Đình Nghệ</td>
+        <td>14/07/2020</td>
+        <td>21/07/2020</td>
+        <td>đ200,000</td>
+        <td>đ2,000,000</td>
+        <td>
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
+            <button>Danh Sách Dịch vụ đi kèm</button>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">3</th>
+        <td>House Princess 01</td>
+        <td>Dương Văn Quan</td>
+        <td>15/03/2021</td>
+        <td>17/03/2021</td>
+        <td>đ50,000</td>
+        <td>đ1,500,000</td>
+        <td>
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
+            <button>Danh Sách Dịch vụ đi kèm</button>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">4</th>
+        <td>House Princess 01</td>
+        <td>Hoàng Trần Nhi Nhi</td>
+        <td>14/01/2021</td>
+        <td>18/01/2021</td>
+        <td>đ100,000</td>
+        <td>đ1,400,000</td>
+        <td>
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
+            <button>Danh Sách Dịch vụ đi kèm</button>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">4</th>
+        <td>House Princess 01</td>
+        <td>Hoàng Trần Nhi Nhi</td>
+        <td>14/01/2021</td>
+        <td>18/01/2021</td>
+        <td>đ0</td>
+        <td>đ100,000</td>
+        <td>
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
+            <button>Danh Sách Dịch vụ đi kèm</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div class="modal" tabindex="-1" id="exampleModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thêm Hợp đồng chi tiết</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div for="start" class="form-label d-inline">Ngày bắt đầu</div>
+                <input type="date" id="start" class="form-control d-inline-flex" aria-describedby="day">
+            </div>
+            <div class="modal-body">
+                <div for="end" class="form-label d-inline">Ngày kết thúc</div>
+                <input type="date" id="end" class="form-control d-inline-flex" aria-describedby="day">
+            </div>
+            <div class="modal-body">
+                <div for="money" class="form-label d-inline">Tiền Gửi</div>
+                <input type="text" id="money" class="form-control d-inline-flex" aria-describedby="day">
+            </div>
+            <div class="modal-body">
+                <div for="summoney" class="form-label d-inline">Tổng Tiền</div>
+                <input type="text" id="summoney" class="form-control d-inline-flex" aria-describedby="day">
+            </div>
+            <div class="modal-body">
+                <div for="money" class="form-label d-inline">Khách Hàng Thuê Dịch Vụ</div>
+                <select  class="form-select" name="Chọn Khách Hàng">
+                    <option>Khách hàng 1</option>
+                    <option>Khách hàng 2</option>
+                    <option>Khách hàng 3</option>
+                    <option>Khách hàng 4</option>
+                </select>
+            </div>
+            <div class="modal-body">
+                <div for="money" class="form-label d-inline">Dịch Vụ</div>
+                <select  class="form-select" name="Chọn Dịch Vụ">
+                    <option>Dịch Vụ 1</option>
+                    <option>Dịch Vụ 2</option>
+                    <option>Dịch Vụ 3</option>
+                    <option>Dịch Vụ 4</option>
+                </select>
+            </div>
+            <div class="modal-body">
+                <div for="summoney" class="form-label d-inline">Dịc Vụ đính kèm</div>
+                <button class="btn-success">+</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
