@@ -16,17 +16,17 @@
 </head>
 <body>
 <c:import url="include/header.jsp"></c:import>
-<form action="/users?action=find" method="post">
-    <input type="text" name="country">
-    <button type="submit">Tìm kiếm</button>
+<form class="d-flex" action="/users?action=find" method="post">
+    <input width="10" class="form-control me-2" type="search" placeholder="Search" name="country">
+    <button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
 </form>
 <center>
     <h1>User Management</h1>
     <h2>
-        <a href="/users?action=create">Add New User</a>
+       <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addModal">Thêm User</button>
     </h2>
 </center>
-<a href="/users?action=sort"><button>Sắp xếp theo tên</button></a>
+<a href="/users?action=sort"><button type="button" class="bth btn-outline-danger">Sắp xếp theo tên</button></a>
 <div align="center">
     <table class="table">
         <thead>
@@ -47,102 +47,136 @@
                 <td>${user.email}</td>
                 <td>${user.country}</td>
                 <td>
-                    <button class="btn btn-outline-success">Edit</button>
+
+                       <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModalz" onclick="editForm('${user.id}','${user.name}','${user.email}','${user.country}')" class="btn btn-outline-success">Edit</button>
+
                 </td>
                 <td>
-                    <button class="btn btn-outline-success">Delete</button>
+                    <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="deleteId('${user.id}','${user.name}')">Delete</button>
                 </td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
     <a href="/users">Back to list</a>
-</div>
-<form action="/users?action=delete" method="post">
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel1">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <input name="id" type="hidden" id="id">
-                <span id="name"></span>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Understood</button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Xóa </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="/users?action=delete" method="post" >
+                    <div class="modal-body">
+                        <input type="hidden" name="id" id="idz">
+                        Bạn có muốn xóa <span id="name"></span> không ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Xóa</button>
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
-</div>
-</form>
-<div class="modal fade" id="update" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel2">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
 
-            <div class="modal-body">
-                    <form action="/users?action=edit" method="post">
+
+    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" >Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/users?action=create" method="post">
                         <table border="1" cellpadding="5">
                             <caption>
-                                <h2>
-                                    Edit User
-                                </h2>
+                                <h2>Add New User</h2>
                             </caption>
-                            <c:if test="${user != null}">
-                                <input type="hidden" name="id" value="<c:out value='${user.id}' />"/>
-                            </c:if>
                             <tr>
                                 <th>User Name:</th>
                                 <td>
-                                    <input type="text" name="name" size="45"
-                                           value="<c:out value='${user.name}' />"
-                                    />
+                                    <input type="text" name="name" id="namec" size="45"/>
                                 </td>
                             </tr>
                             <tr>
                                 <th>User Email:</th>
                                 <td>
-                                    <input type="text" name="email" size="45"
-                                           value="<c:out value='${user.email}' />"
-                                    />
+                                    <input type="text" name="email" id="emailc" size="45"/>
                                 </td>
                             </tr>
                             <tr>
                                 <th>Country:</th>
                                 <td>
-                                    <input type="text" name="country" size="15"
-                                           value="<c:out value='${user.country}' />"
-                                    />
+                                    <input type="text" name="country" id="countryc" size="15"/>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2" align="center">
-                                    <input type="submit" value="Save"/>
-                                </td>
+
                             </tr>
                         </table>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Thoát</button>
-                        <button type="submit" class="btn btn-primary">Sửa</button>
-                    </div>
-                </form>
-            </div>
 
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Thêm</button>
+                </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+
+
+
+    <div class="modal fade" id="exampleModalz" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form class="form-control" action="/users?action=edit" method="post">
+
+                   <table class="form-control">
+                       <input class="form-control" type="hidden" name="id" id="id">
+                       <tr>
+                           <td>Name</td>
+                           <td> <input class="form-input" type="text" name="name" id="namez"> </td>
+                       </tr>
+                       <tr>
+                           <td>Email</td>
+                           <td> <input type="text" name="email" id="emailz"> </td>
+                       </tr>
+                       <tr><td>Country</td>
+                           <td> <input type="text" name="country" id="countryz"> </td></tr>
+                   </table>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
 <c:import url="include/footer.jsp"></c:import>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script>
+
+    function editForm(id,name,email,country) {
+       document.getElementById("id").value = id;
+       document.getElementById("namez").value = name;
+       document.getElementById("emailz").value = email;
+       document.getElementById("countryz").value = country;
+
+    }
+
     function deleteId(id,name) {
-        document.getElementById("id").value = id;
+        document.getElementById("idz").value = id;
         document.getElementById("name").innerText = name;
     }
 </script>

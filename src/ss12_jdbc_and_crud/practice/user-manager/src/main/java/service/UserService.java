@@ -59,7 +59,7 @@ public class UserService implements IUserService{
     @Override
     public void insertUserStore(User user) {
         try {
-            this.insertUser(user);
+            this.userRepository.insertUser(user);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -67,17 +67,17 @@ public class UserService implements IUserService{
 
     @Override
     public List<User> selectUserByCountry(String country) {
-        return this.selectUserByCountry(country);
+        return this.userRepository.selectUserByCountry(country);
     }
 
     @Override
     public void addUserTransaction(User user, int[] permision) {
-      this.addUserTransaction(user,permision);
+      this.userRepository.addUserTransaction(user,permision);
     }
 
     @Override
     public List<User> selectAllUsers() {
-        return this.selectAllUsers();
+        return this.userRepository.selectAllUsers();
     }
 
     @Override
